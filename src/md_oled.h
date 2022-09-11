@@ -74,7 +74,7 @@
 
       public:
         md_oled_1306(uint8_t address, uint8_t sda, uint8_t scl, OLEDDISPLAY_GEOMETRY g)
-            : SSD1306Wire(address, sda, scl, g) {}
+            : SSD1306Wire(address, (int) sda, (int) scl, g) {}
 
         bool begin(uint8_t cols, uint8_t rows);
         void clear();
@@ -97,20 +97,20 @@
         void wrStatus   (const char* msg);
         void wrStatus   (String msg);
         #ifdef RUN_OLED_TEST
-          void box_frame();
-          void r_frame_box();
-          void disc_circle();
-          void string_orientation();
-          void line();
-          void triangle();
-          void bitmap();
-        #endif
+            void box_frame();
+            void r_frame_box();
+            void disc_circle();
+            void string_orientation();
+            void line();
+            void triangle();
+            void bitmap();
+          #endif
 
       protected:
         /*
-        void sendBuffer ();
-        void prepare    ();
-        */
+          void sendBuffer ();
+          void prepare    ();
+          */
 
     };
 
